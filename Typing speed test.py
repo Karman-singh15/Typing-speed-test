@@ -45,12 +45,14 @@ def word_test():
     right=0
     wrong=0
     for i in range (len(ans_list)):
-        if updated[i]==ans_list[i]:
-            right+=1
-        else:
-            wrong+=1
+        for j in range(len(ans_list[i])):
+            if ans_list[i][j]==updated[i][j]:
+                right+=1
+            else:
+                wrong+=1
     acc=(right/(right+wrong))*100
     print('Your Accuracy is: ',acc,'%')
+    print(right,wrong)
     replay()
 
 def replay():
